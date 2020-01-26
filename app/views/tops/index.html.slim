@@ -4,3 +4,4 @@ table.table
     tr
       td = top.content
       td = link_to "変更", [:edit, top]
+      td = link_to "削除", top, method: :delete, data: { confirm: "本当に削除していいですか？"}

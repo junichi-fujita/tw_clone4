@@ -1,5 +1,5 @@
 class TopsController < ApplicationController
-  before_action :set_top, only: [:edit, :update]
+  before_action :set_top, only: [:edit, :update, :destroy]
 
   def index
     @tops = Top.order(updated_at: :desc)
@@ -35,7 +35,8 @@ class TopsController < ApplicationController
   end
 
   def destroy
-
+    @top.destroy
+    redirect_to :tops
   end
 
   private 
