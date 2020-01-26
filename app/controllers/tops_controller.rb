@@ -9,7 +9,12 @@ class TopsController < ApplicationController
   end
 
   def create
-
+    top = Top.new(top_params)
+    if top.save
+      redirect_to :new_top
+    else
+      render "new"
+    end
   end
 
   def show
@@ -26,5 +31,9 @@ class TopsController < ApplicationController
 
   def destroy
 
+  end
+
+  private def top_params
+    params.require(:top).permit(:content)
   end
 end
