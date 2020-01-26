@@ -10,9 +10,9 @@ class TopsController < ApplicationController
   end
 
   def create
-    top = Top.new(top_params)
-    if top.save
-      redirect_to :new_top, notice: "投稿しました。"
+    @top = Top.new(top_params)
+    if @top.save
+      redirect_to :tops, notice: "投稿しました。"
     else
       render "new"
     end
