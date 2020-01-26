@@ -1,5 +1,5 @@
 class TopsController < ApplicationController
-  before_action :set_top, only: [:edit]
+  before_action :set_top, only: [:edit, :update]
 
   def index
     @tops = Top.order(updated_at: :desc)
@@ -26,7 +26,12 @@ class TopsController < ApplicationController
   end
 
   def update
-
+    @top.assign_attributes(top_params)
+    if @top.save
+      redirect_to :tops
+    else
+      render "edit"
+    end
   end
 
   def destroy
