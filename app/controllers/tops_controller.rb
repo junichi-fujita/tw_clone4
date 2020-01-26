@@ -12,7 +12,7 @@ class TopsController < ApplicationController
   def create
     top = Top.new(top_params)
     if top.save
-      redirect_to :new_top
+      redirect_to :new_top, notice: "投稿しました。"
     else
       render "new"
     end
@@ -28,7 +28,7 @@ class TopsController < ApplicationController
   def update
     @top.assign_attributes(top_params)
     if @top.save
-      redirect_to :tops
+      redirect_to :tops, notice: "変更しました。"
     else
       render "edit"
     end
@@ -36,7 +36,7 @@ class TopsController < ApplicationController
 
   def destroy
     @top.destroy
-    redirect_to :tops
+    redirect_to :tops, notice: "削除しました。"
   end
 
   private 
