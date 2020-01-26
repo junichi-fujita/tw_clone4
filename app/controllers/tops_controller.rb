@@ -1,7 +1,8 @@
 class TopsController < ApplicationController
+  before_action :set_top, only: [:edit]
 
   def index
-
+    @tops = Top.order(updated_at: :desc)
   end
 
   def new
@@ -22,7 +23,6 @@ class TopsController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
@@ -33,7 +33,13 @@ class TopsController < ApplicationController
 
   end
 
-  private def top_params
+  private 
+
+  def top_params
     params.require(:top).permit(:content)
+  end
+
+  def set_top
+    @top = Top.find(params[:id])
   end
 end
