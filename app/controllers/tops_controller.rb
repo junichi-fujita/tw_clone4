@@ -39,6 +39,10 @@ class TopsController < ApplicationController
     redirect_to :tops, notice: "削除しました。"
   end
 
+  def confirm
+    @top = Top.new(top_params)
+  end
+
   private 
 
   def top_params
