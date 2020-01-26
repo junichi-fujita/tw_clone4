@@ -41,6 +41,7 @@ class TopsController < ApplicationController
 
   def confirm
     @top = Top.new(top_params)
+    @top.id = params[:id]
   end
 
   private 
