@@ -20,6 +20,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'slim-rails'
 gem 'html2slim'
 gem 'bootstrap', '~> 4.4.1'
+gem 'kaminari-bootstrap', '~> 3.0.1'
 
 # Backend
 gem 'bootsnap', '>= 1.1.0', require: false

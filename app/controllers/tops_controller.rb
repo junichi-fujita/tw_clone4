@@ -2,7 +2,7 @@ class TopsController < ApplicationController
   before_action :set_top, only: [:edit, :update, :destroy]
 
   def index
-    @tops = Top.order(updated_at: :desc)
+    @tops = Top.order(updated_at: :desc).page(params[:page]).per(5)
   end
 
   def new
