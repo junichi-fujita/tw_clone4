@@ -2,6 +2,7 @@
 h1 = @page_title
 
 = form_with model: @top,url: return_new_or_edit, method: confirm_from_method, local: true do |form|
+
   = form.hidden_field :content
 
   p = @top.content

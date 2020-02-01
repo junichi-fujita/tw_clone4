@@ -46,6 +46,10 @@ class TopsController < ApplicationController
   def confirm
     @top = Top.new(top_params)
     @top.id = params[:id]
+    if @top.invalid?
+      render "new"
+    end
+   
   end
 
   private 
