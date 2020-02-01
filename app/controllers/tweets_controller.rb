@@ -55,10 +55,6 @@ class TweetsController < ApplicationController
     end
   end
 
-  def top
-    render "tops/top"
-  end
-
   private 
 
   def tweet_params
