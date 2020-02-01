@@ -7,6 +7,6 @@
       - @tweet.errors.full_messages.each do |msg|
         li = msg
         
-  = form.text_field :content
+  = form.text_area :content
   br
   = form.submit
