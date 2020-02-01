@@ -53,7 +53,10 @@ class TweetsController < ApplicationController
     if @tweet.invalid?
       render "new"
     end
-   
+  end
+
+  def top
+    render "tops/top"
   end
 
   private 

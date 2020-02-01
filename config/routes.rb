@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root "tops#top"
   resources :tweets do
     collection do
       post :confirm
