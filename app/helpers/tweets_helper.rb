@@ -1,21 +1,21 @@
-module TopsHelper
+module TweetsHelper
   def choose_new_or_edit
     if action_name == "new" || action_name == "confirm"
-      :confirm_tops
+      :confirm_tweets
     elsif action_name == "edit"
-      [:confirm, @top]
+      [:confirm, @tweet]
     end
   end
 
   def return_new_or_edit
-    unless @top.id?
-      :tops
+    unless @tweet.id?
+      :tweets
     else
-      :top
+      :tweet
     end
   end
 
   def confirm_from_method
-    @top.id ? "patch" : "post"
+    @tweet.id ? "patch" : "post"
   end
 end

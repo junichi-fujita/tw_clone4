@@ -1,11 +1,11 @@
 - @page_title = "以下の内容で、投稿する。"
 h1 = @page_title
 
-= form_with model: @top,url: return_new_or_edit, method: confirm_from_method, local: true do |form|
+= form_with model: @tweet,url: return_new_or_edit, method: confirm_from_method, local: true do |form|
 
   = form.hidden_field :content
 
-  p = @top.content
+  p = @tweet.content
   br
   = form.submit "投稿する"
   = form.submit "戻る", name: "back"

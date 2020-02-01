@@ -1,0 +1,12 @@
+= form_with model: @tweet, url: choose_new_or_edit, local: true do |form|
+  - @tweet.errors.any?
+    h2 
+      = @tweet.errors.count
+      | 件のエラーがあります。
+    ul
+      - @tweet.errors.full_messages.each do |msg|
+        li = msg
+        
+  = form.text_field :content
+  br
+  = form.submit

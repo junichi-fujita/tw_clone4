@@ -1,0 +1,11 @@
+
+p = notice
+
+table.table
+  - @tweets.each do |tweet|
+    tr
+      td = tweet.content
+      td = link_to "変更", [:edit, tweet]
+      td = link_to "削除", tweet, method: :delete, data: { confirm: "本当に削除していいですか？"}
+.mb-3
+  = paginate @tweets
