@@ -31,10 +31,14 @@ class TweetsController < ApplicationController
 
   def update
     @tweet.assign_attributes(tweet_params)
-    if @tweet.save
-      redirect_to :tweets, notice: "変更しました。"
+    if params[:back]
+      render :new
     else
-      render "edit"
+      if @tweet.save
+        redirect_to :tweets, notice: "変更しました。"
+      else
+        render "edit"
+      end
     end
   end
 
