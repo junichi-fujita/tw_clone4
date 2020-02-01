@@ -2,7 +2,7 @@ module TweetsHelper
   def choose_new_or_edit
     if action_name == "new" || action_name == "confirm" || action_name == "create"
       :confirm_tweets
-    elsif action_name == "edit"
+    elsif action_name == "edit" || action_name == "update"
       [:confirm, @tweet]
     end
   end

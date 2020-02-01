@@ -32,7 +32,7 @@ class TweetsController < ApplicationController
   def update
     @tweet.assign_attributes(tweet_params)
     if params[:back]
-      render :new
+      render :edit
     else
       if @tweet.save
         redirect_to :tweets, notice: "変更しました。"
